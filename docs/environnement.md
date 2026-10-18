@@ -38,6 +38,34 @@ Collez ici la sortie exacte des commandes de vérification.
 | URL locale | `http://localhost:8080/parabank/index.htm` |
 | Page d'administration | `http://localhost:8080/parabank/admin.htm` |
 | Base de données | HyperSQL intégrée |
+| Lancement | `docker compose up -d` (fichier `docker-compose.yml` à la racine) |
+
+Commande pour relever le digest :
+
+```bash
+docker inspect --format "{{index .RepoDigests 0}}" parasoft/parabank
+```
+
+## Configuration de l'application (page admin)
+
+Ces réglages changent les règles métier. Ils sont relevés au premier lancement et remis à l'identique avant
+chaque campagne de test.
+
+| Réglage | Valeur par défaut relevée |
+| --- | --- |
+| Data Access Mode | |
+| Init. Balance ($) | |
+| Min. Balance ($) | |
+| Loan Provider | |
+| Loan Processor | |
+| Threshold (%) | |
+
+## Données de démonstration
+
+| Élément | Valeur |
+| --- | --- |
+| Compte de démonstration | `john` (mot de passe dans la documentation ParaBank) |
+| Clients et comptes après *Initialize* | *(à relever en S-05)* |
 
 ## Historique des changements d'environnement
 

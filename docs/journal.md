@@ -19,3 +19,12 @@ Ce journal sert de mémoire du projet et de support pour raconter le projet en e
 - Création du projet Jira `PB` (Scrum), des Epics par étape et du workflow des défauts.
 - Rédaction de `conventions.md` (branches, commits, identifiants, sévérités, cycle de vie des défauts).
 - Décision : Xray sera activé à l'étape 6 pour ne pas consommer l'essai gratuit de 30 jours trop tôt.
+
+## AAAA-MM-JJ — Étape 2 : lancement et exploration
+
+- Lancement de ParaBank avec `docker compose up -d`, digest relevé et figé dans `docker-compose.yml`.
+- Réglages admin par défaut relevés dans `environnement.md`.
+- Cartographie : 16 pages, 10 formulaires, 49 questions ouvertes.
+- Sessions réalisées : S-01 … S-05 *(cocher au fur et à mesure)*.
+- Anomalies trouvées : *(nombre)*, dont *(nombre)* reproduites et ouvertes dans Jira.
+- Décision : ADR-0001, tests sur instance locale à version figée.

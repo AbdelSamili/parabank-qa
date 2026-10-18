@@ -34,8 +34,10 @@ Le périmètre détaillé et les éléments hors périmètre sont décrits dans 
 
 ```text
 parabank-qa/
+├── CLAUDE.md                  Règles pour Claude Code (assistant de développement)
 ├── README.md
 ├── .gitignore
+├── docker-compose.yml         Lancement de ParaBank en local
 ├── .github/
 │   └── pull_request_template.md
 └── docs/
@@ -53,15 +55,24 @@ Voir `docs/environnement.md`.
 
 ## Lancement
 
-*À compléter à l'étape 2 (lancement de ParaBank avec Docker Compose).*
+```bash
+docker compose up -d          # démarre ParaBank
+docker compose ps             # attendre l'état "healthy"
+docker compose down           # arrête ParaBank
+```
+
+Application : `http://localhost:8080/parabank/index.htm`
+Administration (initialiser / nettoyer la base) : `http://localhost:8080/parabank/admin.htm`
+
+Pourquoi une instance locale plutôt que l'instance publique : voir `docs/adr/ADR-0001-instance-locale-docker.md`.
 
 ## Statut
 
 | Étape | Contenu | Statut |
 | --- | --- | --- |
 | 0 | Préparation du poste de travail | ✅ Terminé |
-| 1 | Dépôt GitHub et projet Jira | 🔄 En cours |
-| 2 | Lancement et exploration de ParaBank | ⏳ À faire |
+| 1 | Dépôt GitHub et projet Jira | ✅ Terminé |
+| 2 | Lancement et exploration de ParaBank | 🔄 En cours |
 | 3 | Base de test (exigences) | ⏳ À faire |
 | 4 | Analyse des risques | ⏳ À faire |
 | 5 | Plan de test | ⏳ À faire |
