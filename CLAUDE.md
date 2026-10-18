@@ -31,6 +31,8 @@ Le déroulé étape par étape est dans `docs/prompts/prompt-claude-code.md`.
    (`http://localhost:8080/parabank`), version figée par digest (ADR-0001).
 7. **S'arrêter à la fin de chaque étape** et attendre la validation de l'auteur avant de passer à la suivante.
 8. **Ne pas supprimer** de fichier de documentation existant ni réécrire l'historique Git.
+9. **Ne jamais ajouter de mention de Claude** (Co-Authored-By, Claude-Session, Generated with Claude Code)
+   dans les commits, les pull requests ou les fichiers du dépôt.
 
 ## 3. Environnement et stack
 

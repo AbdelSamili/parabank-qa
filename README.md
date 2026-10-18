@@ -37,7 +37,9 @@ parabank-qa/
 ├── CLAUDE.md                  Règles pour Claude Code (assistant de développement)
 ├── README.md
 ├── .gitignore
-├── docker-compose.yml         Lancement de ParaBank en local
+├── .gitattributes             Fins de ligne LF pour les scripts shell
+├── docker-compose.yml         Lancement de ParaBank en local (image figée par digest)
+├── scripts/                   wait-for-parabank et reset-db (bash + PowerShell)
 ├── .github/
 │   └── pull_request_template.md
 └── docs/
@@ -56,10 +58,13 @@ Voir `docs/environnement.md`.
 ## Lancement
 
 ```bash
-docker compose up -d          # démarre ParaBank
-docker compose ps             # attendre l'état "healthy"
-docker compose down           # arrête ParaBank
+docker compose up -d                 # démarre ParaBank
+./scripts/wait-for-parabank.sh       # attend un HTTP 200 (timeout 120 s)
+./scripts/reset-db.sh                # remet la base dans l'état initial (Clean + Initialize)
+docker compose down                  # arrête ParaBank
 ```
+
+Sous Windows PowerShell : `.\scripts\wait-for-parabank.ps1` et `.\scripts\reset-db.ps1`.
 
 Application : `http://localhost:8080/parabank/index.htm`
 Administration (initialiser / nettoyer la base) : `http://localhost:8080/parabank/admin.htm`
