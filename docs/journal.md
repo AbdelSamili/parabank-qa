@@ -20,6 +20,14 @@ Ce journal sert de mémoire du projet et de support pour raconter le projet en e
 - Rédaction de `conventions.md` (branches, commits, identifiants, sévérités, cycle de vie des défauts).
 - Décision : Xray sera activé à l'étape 6 pour ne pas consommer l'essai gratuit de 30 jours trop tôt.
 
+## 2026-10-18 — Étape 2 (support) : outillage de l'environnement
+
+- Scripts `wait-for-parabank` et `reset-db` en bash et PowerShell, testés sur conteneur neuf (PB-32).
+- Image ParaBank figée par digest `sha256:5343aebd…459b0f` dans `docker-compose.yml` (PB-24).
+- Blocage résolu : sur conteneur neuf, `index.htm` répond `302` vers `initializeDB.htm` ; le script d'attente
+  suit maintenant les redirections. Healthcheck corrigé : il utilisait `wget`, absent de l'image.
+- Relecture des fiches : fiches encore vierges, remarques sur les gabarits dans `exploration/relecture-fiches.md` (PB-33).
+
 ## AAAA-MM-JJ — Étape 2 : lancement et exploration
 
 - Lancement de ParaBank avec `docker compose up -d`, digest relevé et figé dans `docker-compose.yml`.
