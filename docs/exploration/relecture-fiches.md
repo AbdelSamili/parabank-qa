@@ -6,7 +6,7 @@ candidats non reproduits deux fois (`conventions.md` §6).
 
 | Élément | Valeur |
 | --- | --- |
-| Relecteur | Claude Code (assistant), à valider par l'auteur |
+| Relecteur | Abdelkhaleq Samili |
 | Date | 2026-10-18 |
 | Fiches relues | `session-01` à `session-05` (état du commit `54d71c7`) |
 | Ticket Jira | PB-33 |
