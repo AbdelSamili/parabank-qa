@@ -1,0 +1,23 @@
+# Environnement de test local de ParaBank
+# Lancement :  docker compose up -d
+# Arrêt     :  docker compose down
+#
+# Une fois le digest relevé (voir docs/environnement.md), remplacez
+#   parasoft/parabank:latest
+# par
+#   parasoft/parabank@sha256:<digest>
+# pour toujours tester exactement la même version (baseline de l'objet de test).
+
+services:
+  parabank:
+    image: parasoft/parabank:latest
+    container_name: parabank
+    ports:
+      - "8080:8080"     # application web et services REST/SOAP
+      - "61616:61616"   # broker JMS (fournisseur de prêt JMS)
+      - "9001:9001"     # base de données HyperSQL
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://localhost:8080/parabank/index.htm || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
